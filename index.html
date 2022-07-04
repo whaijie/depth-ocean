@@ -224,9 +224,25 @@ func zslCreateNode(level int, score float64, ele interface&#123;&#125;) *Skiplis
 <ul>
 <li><p>randomLevel() 方法，随机生成 1~MAX_LEVEL 之间的数（MAX_LEVEL表示索引的最高层数），且有 1&#x2F;2的概率返回 1、1&#x2F;4的概率返回 2、1&#x2F;8的概率返回 3 …</p>
 </li>
-<li><p>randomLevel() 方法返回 1 不建索引、返回2建一级索引、返回 3 建二级索引、返回 4 建三级索引 …</p>
-<p>&#x2F;&#x2F;随机抽取0-1之间的随机数，并与0.25进行比较，每个节点有四分之一的概率升级到第二层，有十六分之一概率升到第三层… </p>
-<p>  func randomLevel() int {<br>  rand.Seed(time.Now().Unix())<br>  level :&#x3D; 1<br>  for {<br>      random :&#x3D; float32(rand.Intn(100) &#x2F; 100)<br>      if random &lt; ZSKIP_UPPER_PERCENT {<br>          level +&#x3D; 1<br>      } else {<br>          break<br>      }<br>      if level &gt; ZSKIP_MAX_LEVEL {<br>          level &#x3D; ZSKIP_MAX_LEVEL<br>          break<br>      }<br>  }<br>  return level<br>  }</p>
+<li><p>randomLevel() 方法返回 1 不建索引、返回2建一级索引、返回 3 建二级索引、返回 4 建三级索引 … </p>
+<pre><code>  func randomLevel() int &#123;
+      rand.Seed(time.Now().Unix())
+      level := 1
+      for &#123;
+          random := float32(rand.Intn(100) / 100)
+          if random &lt; ZSKIP_UPPER_PERCENT &#123;
+          level += 1
+      &#125; else &#123;
+          break
+      &#125;
+      if level &gt; ZSKIP_MAX_LEVEL &#123;
+          level = ZSKIP_MAX_LEVEL
+          break
+          &#125;
+      &#125;
+      return level
+  &#125;
+</code></pre>
 </li>
 </ul>
 <h5 id="4-4-范围查询"><a href="#4-4-范围查询" class="headerlink" title="4.4 范围查询"></a>4.4 范围查询</h5><pre><code>func zslRange(skipList *SkipList, min, max float64) []*SkiplistNode &#123;
