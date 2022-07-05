@@ -4,18 +4,18 @@
   <meta charset="utf-8">
   
   
-  <title>Hexo</title>
+  <title>Redis之SkipList原理及golang实现 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="我们知道有序单链表在进行遍历操作时，只能从头开始查找，直到查到自己想要的数据为止，其时间复杂度为O(n)，十分低效，这也是有序单链表的特点之一，即：删除、新增节点效率高，查找效率低。但是如果单链表也能够像有序数组一样，可以通过二分法进行查找，那么它的查询效率将会大大提高，而跳表就应运而生了。   如下图所示，我们要查找10这个节点，若通过有序单链表方式，只能从1开始顺序查到10。但如果我们把第一层">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="Redis之SkipList原理及golang实现">
 <meta property="og:url" content="https://whaijie.github.io/2022/07/05/Redis%E4%B9%8BSkipList%E7%9A%84%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E7%8E%B0/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="我们知道有序单链表在进行遍历操作时，只能从头开始查找，直到查到自己想要的数据为止，其时间复杂度为O(n)，十分低效，这也是有序单链表的特点之一，即：删除、新增节点效率高，查找效率低。但是如果单链表也能够像有序数组一样，可以通过二分法进行查找，那么它的查询效率将会大大提高，而跳表就应运而生了。   如下图所示，我们要查找10这个节点，若通过有序单链表方式，只能从1开始顺序查到10。但如果我们把第一层">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://raw.githubusercontent.com/whaijie/depth-ocean/master/images/img_1.png">
 <meta property="article:published_time" content="2022-07-05T02:59:36.470Z">
-<meta property="article:modified_time" content="2022-07-05T02:51:26.480Z">
+<meta property="article:modified_time" content="2022-07-05T03:04:33.421Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/whaijie/depth-ocean/master/images/img_1.png">
@@ -84,6 +84,16 @@
   </div>
   <div class="article-inner">
     
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Redis之SkipList原理及golang实现
+    </h1>
+  
+
+      </header>
     
     <div class="e-content article-entry" itemprop="articleBody">
       
@@ -262,7 +272,7 @@ func zslCreateNode(level int, score float64, ele interface&#123;&#125;) *Skiplis
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://whaijie.github.io/2022/07/05/Redis%E4%B9%8BSkipList%E7%9A%84%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E7%8E%B0/" data-id="cl57l2tox0000eo15efbdf8p4" data-title="" class="article-share-link">Share</a>
+      <a data-url="https://whaijie.github.io/2022/07/05/Redis%E4%B9%8BSkipList%E7%9A%84%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E7%8E%B0/" data-id="cl57l2tox0000eo15efbdf8p4" data-title="Redis之SkipList原理及golang实现" class="article-share-link">Share</a>
       
       
       
@@ -313,7 +323,7 @@ func zslCreateNode(level int, score float64, ele interface&#123;&#125;) *Skiplis
       <ul>
         
           <li>
-            <a href="/depth-ocean/2022/07/05/Redis%E4%B9%8BSkipList%E7%9A%84%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E7%8E%B0/">(no title)</a>
+            <a href="/depth-ocean/2022/07/05/Redis%E4%B9%8BSkipList%E7%9A%84%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E7%8E%B0/">Redis之SkipList原理及golang实现</a>
           </li>
         
           <li>
